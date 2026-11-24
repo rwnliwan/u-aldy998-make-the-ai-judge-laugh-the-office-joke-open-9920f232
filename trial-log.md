@@ -35,6 +35,9 @@
 | 0 | (pre-build) trial log + facts recorded | — | — | — |
 | 1 | Builder v1 — main.ts, entry v1 (90 chars) | 90 chars / 90 bytes, 1 line, UTF-8, non-whitespace | PASS — local run via ENTRY_OUTPUT twice, byte-identical (sha be203c17... after polish; v1 output superseded) | Builder session 579409bf |
 | 2 | Polish — "the report" cut, entry FINAL (82 chars) | 82 chars / 82 bytes, 1 line; main.ts md5 74ccc98b2c5ef72a3d04b102867365a5 | PASS — local run via ENTRY_OUTPUT twice, byte-identical sha256 be203c17f906a0619589bdc9a84f4ad97725dfca58d30f83c51c3b324f295821; GATE PASS (1-200, non-whitespace) | Joke v1 → FINAL; no meaning lost |
+| 3 | GitHub — repo publik rwnliwan/u-aldy998-make-the-ai-judge-laugh-the-office-joke-open-9920f232, commit 979b468a290ea4bfc187325126c8fddeb72a859f | repo PUBLIC, created after opens_at 2026-11-24T08:32:23Z | PASS — git ls-remote HEAD = commit lokal | + README (3 badge), LICENSE (MIT), .makefun/owner.json |
+| 4 | Bundle — 1 session (builder 579409bf), --no-discover --no-family, parent-session chief-parent-prompt.jsonl, prompt-file prompt-office-joke-open.txt, prompt-origin other | bundle 798.588 B, sha256 01879438d8a3a67f94536696c4925f497225d579f055a2a2a7667d61136d74d8; 12 turns, 55 lines | BLOCKED — warning: 0 usage rows attached; subagent rows flush only when the run completes. CLI: parent must run the SELECT + re-bundle + submit | Repo CLEAN at bundle time (prompt file lives outside repo) |
+| 5 | Check — `makefun.mjs check --commit 979b468a... --transcripts <bundle>` | 13 passed, 1 failed, 5 skipped, 5 at submission | EXPECTED — FAIL only thinking_priced (0 usage rows, ≥1 required). thinking_reproduces 70,4% (50/71, main.ts 21 authored lines); thinking_revised PASS; all other gates PASS | Fix = parent re-bundle with --muse-usage after this run completes, then re-check |
 
 ## Status
 - NOT YET SUBMITTED. Entry final (82 chars) + repo pushed. Check result recorded below after bundle/check.
